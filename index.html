@@ -20,7 +20,6 @@ body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px
   padding-right:max(16px,env(safe-area-inset-right,0px));
   padding-block:0}
 
-/* TOPBAR */
 .topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;
   background:var(--bg);border-bottom:1px solid var(--line);
   padding:0 max(24px,env(safe-area-inset-left,0px));
@@ -31,16 +30,13 @@ body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px
 .logo span{color:var(--fg2)}
 .qtag{font-family:var(--mono);font-size:12px;color:var(--fg3)}
 
-/* MAIN */
 .main{max-width:820px;margin:0 auto;padding-block:36px 80px}
 .page{display:none}.page.active{display:block}
 
-/* intro */
 .slabel{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
 .stitle{font-size:clamp(20px,3vw,28px);font-weight:700;line-height:1.2;margin-bottom:14px;text-wrap:balance}
 .sbody{color:var(--fg2);font-weight:300;line-height:1.8;margin-bottom:24px}
 
-/* aviso */
 .aviso{background:#1c1501;border:1px solid var(--warn);border-radius:var(--r);padding:18px 22px;margin-bottom:28px}
 .aviso h4{color:var(--warn);font-weight:700;font-size:14px;margin-bottom:10px}
 .aviso ul{color:#fcd34d;font-size:13px;padding-left:18px;line-height:2}
@@ -58,29 +54,19 @@ body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px
 .timer-bar{height:100%;background:linear-gradient(90deg,var(--accent),#7c3aed);
   border-radius:2px;transition:width 1s linear,background .3s}
 
-/* progreso */
 .prog-wrap{margin-bottom:20px}
 .prog-label{font-family:var(--mono);font-size:11px;color:var(--fg2);margin-bottom:6px;display:flex;justify-content:space-between}
 .prog-bar{height:3px;background:var(--bg3);border-radius:2px;overflow:hidden}
 .prog-fill{height:100%;background:linear-gradient(90deg,#7c3aed,var(--accent));border-radius:2px;transition:width .35s ease}
 
-/* pregunta */
-.qcard{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:22px;margin-bottom:14px;
-  transition:border-color .2s}
+.qcard{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:22px;margin-bottom:14px;transition:border-color .2s}
 .qcard.answered{border-color:var(--fn);opacity:.8}
-.qnum{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:8px;
-  display:flex;align-items:center;gap:8px}
-.qcheck{width:18px;height:18px;border-radius:50%;background:var(--fn);display:none;
-  align-items:center;justify-content:center;font-size:10px;color:var(--bg)}
+.qnum{font-family:var(--mono);font-size:11px;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.qcheck{width:18px;height:18px;border-radius:50%;background:var(--fn);display:none;align-items:center;justify-content:center;font-size:10px;color:var(--bg)}
 .qcard.answered .qcheck{display:flex}
 .qtxt{font-size:15px;font-weight:500;margin-bottom:14px;line-height:1.5}
 .qtxt code{font-family:var(--mono);background:var(--bg3);padding:2px 7px;border-radius:4px;color:var(--fn)}
-.cb-inline{background:var(--bg3);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:10px 0 14px}
-.cb-bar2{padding:5px 12px;font-family:var(--mono);font-size:11px;color:var(--fn);border-bottom:1px solid var(--line);background:var(--bg)}
-.cb-body2{padding:12px 16px;font-family:var(--mono);font-size:13px;line-height:1.8;overflow-x:auto}
-.kw{color:var(--kw)}.str{color:var(--str)}.num{color:var(--num)}.fn2{color:var(--fn)}.cmt{color:#546e7a;font-style:italic}
 
-/* opciones */
 .opts{display:flex;flex-direction:column;gap:7px}
 .opt{display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:6px;
   border:1px solid var(--line);cursor:pointer;font-size:14px;line-height:1.5;
@@ -93,7 +79,6 @@ body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px
   font-family:var(--mono);font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px}
 .opt.sel .ol{background:var(--fn);color:var(--bg);border-color:var(--fn)}
 
-/* nofeedback */
 .nofb{margin-top:10px;padding:8px 14px;border-radius:6px;font-size:13px;
   background:var(--bg3);border:1px solid var(--line);color:var(--fg3);display:none}
 .qcard.answered .nofb{display:block}
@@ -110,15 +95,17 @@ input[type=text],select{width:100%;background:var(--bg3);border:1px solid var(--
 input[type=text]:focus,select:focus{border-color:var(--accent)}
 select option{background:var(--bg3)}
 
-/* cifrado preview */
-.cifrado-box{background:var(--bg3);border:1px solid var(--line);border-radius:var(--r);
-  padding:16px;margin-bottom:20px;overflow:hidden}
-.cifrado-box h4{font-family:var(--mono);font-size:11px;color:var(--fn);margin-bottom:8px}
-.cifrado-pre{font-family:var(--mono);font-size:11px;color:var(--fg3);
-  word-break:break-all;line-height:1.6;max-height:80px;overflow:hidden;
-  mask-image:linear-gradient(to bottom,var(--fg3) 30%,transparent)}
+/* bloque de texto cifrado para copiar */
+.copy-block{background:var(--bg3);border:1px solid var(--accent);border-radius:var(--r);padding:20px;margin-bottom:20px}
+.copy-block-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.copy-block-header h3{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.08em}
+.copy-status{font-family:var(--mono);font-size:11px;color:var(--good);display:none}
+.copy-status.show{display:block}
+.cifrado-txt{font-family:var(--mono);font-size:11px;color:var(--fg2);
+  word-break:break-all;line-height:1.7;max-height:180px;overflow-y:auto;
+  padding:10px;background:var(--bg);border-radius:4px;border:1px solid var(--line);
+  user-select:all;cursor:text}
 
-/* buttons */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;
   border-radius:6px;border:none;cursor:pointer;
   font-family:var(--mono);font-size:13px;font-weight:700;
@@ -127,19 +114,17 @@ select option{background:var(--bg3)}
 .btn:disabled{opacity:.4;pointer-events:none}
 .btn-p{background:var(--accent);color:var(--bg)}
 .btn-g{background:var(--bg3);color:var(--fg);border:1px solid var(--line)}
+.btn-copy{background:#1d3a2f;color:var(--accent);border:1px solid var(--accent)}
 .brow{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-
-.lock-notice{text-align:center;padding:40px 20px;color:var(--fg3);font-family:var(--mono);font-size:13px}
-.lock-notice big{display:block;font-size:36px;margin-bottom:10px}
 
 @media(max-width:600px){
   .main{padding-block:20px 60px}
   .opts{gap:5px}
+  .timer-display{font-size:22px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0s!important;transition-duration:0s!important}}
 </style>
 
-<!-- TOPBAR -->
 <header class="topbar">
   <div class="logo"><span>&gt;&gt;&gt;</span><strong>quiz@JFK</strong><span>11°·P4</span></div>
   <div class="qtag" id="qprog">0 / 15 respondidas</div>
@@ -147,37 +132,36 @@ select option{background:var(--bg3)}
 
 <main class="main">
 
-<!-- ═══ PÁGINA 1 — INTRO ═══ -->
+<!-- PÁGINA 1 — INTRO -->
 <div class="page active" id="pg1">
   <p class="slabel">Quiz — Python básico</p>
   <h1 class="stitle">Evaluación individual — Tecnología 11°</h1>
-  <p class="sbody">15 preguntas sobre Python: variables, tipos de datos, operadores y pensamiento computacional. Lee bien antes de responder — no hay retroalimentación durante el quiz.</p>
+  <p class="sbody">15 preguntas sobre Python. Tienes <strong>2 minutos</strong>. Lee bien antes de responder.</p>
 
   <div class="aviso">
     <h4>⚠️ Condiciones de esta evaluación</h4>
     <ul>
-      <li>No sabrás si acertaste o fallaste en ninguna pregunta.</li>
-      <li>Solo el docente puede ver tus respuestas — el archivo que descargas está <strong>cifrado</strong>.</li>
-      <li>El texto cifrado no tiene sentido sin la clave del docente — no lo intentes descifrar.</li>
-      <li>Respuestas iguales entre compañeros serán detectadas automáticamente.</li>
-      <li>Usar IA no te ayuda aquí: el archivo entregado no muestra las respuestas.</li>
+      <li>No sabrás si acertaste o fallaste — <strong>sin retroalimentación</strong>.</li>
+      <li>Al terminar verás un código cifrado — <strong>cópialo y envíaselo al docente</strong>.</li>
+      <li>Sin la clave del docente ese texto no tiene ningún sentido.</li>
+      <li>El timer corre desde que entras — <strong>2 minutos exactos</strong>.</li>
     </ul>
   </div>
 
   <div class="brow">
-    <button class="btn btn-p" onclick="goTo(2)">Comenzar el quiz →</button>
+    <button class="btn btn-p" onclick="goTo(2)">Comenzar — 2 min ⏱</button>
   </div>
 </div>
 
-<!-- ═══ PÁGINA 2 — QUIZ ═══ -->
+<!-- PÁGINA 2 — QUIZ -->
 <div class="page" id="pg2">
   <p class="slabel">Quiz en curso</p>
-  <h1 class="stitle">3 minutos — responde rápido</h1>
+  <h1 class="stitle">2 minutos — responde rápido</h1>
 
   <div class="timer-wrap">
-    <div class="timer-display" id="timerDisplay">3:00</div>
+    <div class="timer-display" id="timerDisplay">2:00</div>
     <div style="flex:1">
-      <div class="timer-label">Tiempo restante — al llegar a 0:00 el quiz se entrega automáticamente</div>
+      <div class="timer-label">Tiempo restante — al llegar a 0:00 se entrega automáticamente</div>
       <div class="timer-bar-wrap" style="margin-top:6px">
         <div class="timer-bar" id="timerBar" style="width:100%"></div>
       </div>
@@ -196,22 +180,22 @@ select option{background:var(--bg3)}
   </div>
 </div>
 
-<!-- ═══ PÁGINA 3 — ENTREGA ═══ -->
+<!-- PÁGINA 3 — ENTREGA -->
 <div class="page" id="pg3">
   <p class="slabel">Paso final — Entrega</p>
-  <h1 class="stitle">Descarga tu archivo de entrega</h1>
-  <p class="sbody">El archivo contiene tus respuestas cifradas. Envíaselo al docente por el medio indicado. <strong>Tú no puedes ver las respuestas ni el resultado</strong> — solo el docente tiene la clave.</p>
+  <h1 class="stitle">Copia este texto y envíaselo al docente</h1>
+  <p class="sbody">Este es tu código de entrega. <strong>Cópialo completo</strong> y envíaselo al docente por WhatsApp o el medio que indique. Sin este código tu quiz no puede ser calificado.</p>
 
   <div class="info-box">
     <h3>📋 Datos del estudiante</h3>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
       <div class="campo" style="grid-column:1/-1">
         <label>Nombre completo <span>*</span></label>
-        <input type="text" id="d_nom" placeholder="Ej: Juan Camilo Pérez Rodríguez">
+        <input type="text" id="d_nom" placeholder="Ej: Juan Camilo Pérez Rodríguez" oninput="generarCodigo()">
       </div>
       <div class="campo">
         <label>Grado <span>*</span></label>
-        <select id="d_grd">
+        <select id="d_grd" onchange="generarCodigo()">
           <option value="">Seleccionar...</option>
           <option>11°A</option><option>11°B</option><option>11°C</option><option>11°D</option>
         </select>
@@ -223,146 +207,54 @@ select option{background:var(--bg3)}
     </div>
   </div>
 
-  <div class="cifrado-box">
-    <h4>// vista previa del archivo cifrado (fragmento)</h4>
-    <div class="cifrado-pre" id="cifPrev">Completa tus datos y genera el archivo...</div>
+  <div class="copy-block" id="copyBlock" style="display:none">
+    <div class="copy-block-header">
+      <h3>// TU CÓDIGO DE ENTREGA — CÓPIALO COMPLETO</h3>
+      <span class="copy-status" id="copyStatus">✓ ¡Copiado!</span>
+    </div>
+    <div class="cifrado-txt" id="cifradoTxt"></div>
+    <div class="brow">
+      <button class="btn btn-copy" onclick="copiarTexto()">📋 Copiar todo</button>
+    </div>
   </div>
 
-  <div class="aviso" style="margin-bottom:20px">
-    <h4>🔒 ¿Por qué no veo mis respuestas?</h4>
-    <ul>
-      <li>Tus respuestas están cifradas con AES-256 — el estándar bancario.</li>
-      <li>Sin la <strong>clave del docente</strong> el archivo es texto sin sentido.</li>
-      <li>El archivo incluye tu nombre, grado, hora exacta y un código de sesión único.</li>
-      <li>Intentar modificar el archivo lo invalida — el docente detecta la manipulación.</li>
-    </ul>
+  <div id="msgDatos" style="color:var(--warn);font-family:var(--mono);font-size:13px;display:none">
+    ⚠️ Ingresa tu nombre y grado para generar el código.
   </div>
 
-  <div class="brow">
-    <button class="btn btn-p btn-dl" id="btnDl" onclick="descargar()">⬇ Descargar archivo de entrega</button>
-    <button class="btn btn-g" onclick="goTo(2)">← Revisar respuestas</button>
-  </div>
-
-  <p style="color:var(--fg3);font-size:12px;margin-top:20px;font-family:var(--mono)">
-    Docente: Kevin Daniel Castillo Gómez · I.E. John F. Kennedy · San Juanito, Meta · Tecnología 11° · Periodo 4 · 2026
+  <p style="color:var(--fg3);font-size:12px;margin-top:24px;font-family:var(--mono)">
+    Docente: Kevin Daniel Castillo Gómez · I.E. John F. Kennedy · San Juanito, Meta · Tecnología 11° · P4 · 2026
   </p>
 </div>
 
 </main>
 
 <script>
-// ═══════════════════════════════════════════════════════════════
-// CLAVE MAESTRA — el docente la cambia antes de distribuir.
-// NO compartir esta página con estudiantes sin cambiar la clave.
-// ═══════════════════════════════════════════════════════════════
 const MASTER_KEY = 'JFK-Kevin-2026-P4-QuizPython-S3cr3t0';
 
-// ═══════════════════════════════════════════════════════════════
-// BANCO DE PREGUNTAS — 15 preguntas, sin feedback al estudiante
-// ═══════════════════════════════════════════════════════════════
 const QD = [
-  {
-    q: '¿Cuál es el resultado de <code>print(10 + 3 * 2)</code>?',
-    opts: ['26', '16', '13', '32'],
-    ans: 1
-  },
-  {
-    q: '¿Qué tipo de dato tiene la variable <code>ciudad = "Medellín"</code>?',
-    opts: ['int', 'bool', 'str', 'float'],
-    ans: 2
-  },
-  {
-    q: '¿Cuál nombre de variable es INVÁLIDO en Python?',
-    opts: ['mi_nota', 'promedio2024', '2nota', '_resultado'],
-    ans: 2
-  },
-  {
-    q: 'Si <code>x = 17</code>, ¿qué devuelve <code>x % 5</code>?',
-    opts: ['3', '2', '5', '1'],
-    ans: 1
-  },
-  {
-    q: '¿Qué imprime <code>print(2 ** 4)</code>?',
-    opts: ['8', '16', '24', '4'],
-    ans: 1
-  },
-  {
-    q: '¿Cuál expresión convierte correctamente el texto <code>"3.8"</code> a número decimal?',
-    opts: ['int("3.8")', 'str(3.8)', 'float("3.8")', 'bool("3.8")'],
-    ans: 2
-  },
-  {
-    q: '¿Qué valor tiene <code>True and False</code>?',
-    opts: ['True', 'False', '1', 'None'],
-    ans: 1
-  },
-  {
-    q: '¿Cuál tipo de dato almacena una colección de varios elementos?',
-    opts: ['str', 'bool', 'float', 'list'],
-    ans: 3
-  },
-  {
-    q: '¿Qué hace el operador <code>//</code> en Python?',
-    opts: ['Potencia', 'División con decimales', 'División entera (sin residuo)', 'Módulo (residuo)'],
-    ans: 2
-  },
-  {
-    q: 'El siguiente código tiene un error. ¿Cuál es?\n<code>nombre = Kevin\nprint(nombre)</code>',
-    opts: [
-      'print no existe en Python',
-      'La variable nombre está mal escrita',
-      'Kevin debe ir entre comillas: "Kevin"',
-      'Falta el operador ='
-    ],
-    ans: 2
-  },
-  {
-    q: '¿Qué imprime este código?\n<code>x = 5\nx += 3\nprint(x)</code>',
-    opts: ['5', '3', '8', '53'],
-    ans: 2
-  },
-  {
-    q: '¿Cuál es el tipo de dato de <code>aprobado = False</code>?',
-    opts: ['str', 'int', 'float', 'bool'],
-    ans: 3
-  },
-  {
-    q: 'Para mostrar texto en pantalla en Python se usa:',
-    opts: ['echo()', 'console.log()', 'print()', 'display()'],
-    ans: 2
-  },
-  {
-    q: '¿Qué significa que Python distingue entre <code>Nombre</code> y <code>nombre</code>?',
-    opts: [
-      'Son la misma variable — Python las trata igual',
-      'Python es case-sensitive: son variables distintas',
-      'Solo la primera letra importa',
-      'Python convierte todo a minúsculas automáticamente'
-    ],
-    ans: 1
-  },
-  {
-    q: '¿Cuál de estas líneas de código ES correcta en Python?',
-    opts: [
-      'nota final = 4.5',
-      '1alumno = "Pedro"',
-      'for = 10',
-      'edad_estudiante = 16'
-    ],
-    ans: 3
-  }
+  { q: '¿Cuál es el resultado de <code>print(10 + 3 * 2)</code>?', opts: ['26','16','13','32'], ans: 1 },
+  { q: '¿Qué tipo de dato tiene <code>ciudad = "Medellín"</code>?', opts: ['int','bool','str','float'], ans: 2 },
+  { q: '¿Cuál nombre de variable es INVÁLIDO en Python?', opts: ['mi_nota','promedio2024','2nota','_resultado'], ans: 2 },
+  { q: 'Si <code>x = 17</code>, ¿qué devuelve <code>x % 5</code>?', opts: ['3','2','5','1'], ans: 1 },
+  { q: '¿Qué imprime <code>print(2 ** 4)</code>?', opts: ['8','16','24','4'], ans: 1 },
+  { q: '¿Cuál expresión convierte <code>"3.8"</code> a número decimal?', opts: ['int("3.8")','str(3.8)','float("3.8")','bool("3.8")'], ans: 2 },
+  { q: '¿Qué valor tiene <code>True and False</code>?', opts: ['True','False','1','None'], ans: 1 },
+  { q: '¿Cuál tipo de dato almacena una colección de varios elementos?', opts: ['str','bool','float','list'], ans: 3 },
+  { q: '¿Qué hace el operador <code>//</code> en Python?', opts: ['Potencia','División con decimales','División entera (sin residuo)','Módulo (residuo)'], ans: 2 },
+  { q: 'El siguiente código tiene un error. ¿Cuál es?<br><code>nombre = Kevin<br>print(nombre)</code>', opts: ['print no existe en Python','La variable nombre está mal escrita','Kevin debe ir entre comillas: "Kevin"','Falta el operador ='], ans: 2 },
+  { q: '¿Qué imprime este código?<br><code>x = 5<br>x += 3<br>print(x)</code>', opts: ['5','3','8','53'], ans: 2 },
+  { q: '¿Cuál es el tipo de dato de <code>aprobado = False</code>?', opts: ['str','int','float','bool'], ans: 3 },
+  { q: 'Para mostrar texto en pantalla en Python se usa:', opts: ['echo()','console.log()','print()','display()'], ans: 2 },
+  { q: '¿Qué significa que Python distingue entre <code>Nombre</code> y <code>nombre</code>?', opts: ['Son la misma variable','Python es case-sensitive: son variables distintas','Solo la primera letra importa','Python convierte todo a minúsculas'], ans: 1 },
+  { q: '¿Cuál de estas líneas ES correcta en Python?', opts: ['nota final = 4.5','1alumno = "Pedro"','for = 10','edad_estudiante = 16'], ans: 3 }
 ];
 
-// ═══════════════════════════════════════════════════════════════
-// ESTADO
-// ═══════════════════════════════════════════════════════════════
-const ANS = {};  // {índice: opción_elegida}
+const ANS = {};
 let answered = 0;
 
-// ═══════════════════════════════════════════════════════════════
-// TEMPORIZADOR — 3 minutos = 180 segundos
-// ═══════════════════════════════════════════════════════════════
-const TOTAL_SEC = 180;
+// ── TEMPORIZADOR 2 min ──
+const TOTAL_SEC = 120;
 let timerSec = TOTAL_SEC;
 let timerInterval = null;
 let timerStarted = false;
@@ -375,10 +267,8 @@ function startTimer() {
     updateTimerDisplay();
     if (timerSec <= 0) {
       clearInterval(timerInterval);
-      // tiempo agotado — forzar entrega
       timerSec = 0;
       updateTimerDisplay();
-      // bloquear todas las preguntas sin responder (registrar opción 0 para no quedar vacías)
       QD.forEach((_, i) => { if (ANS[i] === undefined) selectAnsForced(i); });
       setTimeout(() => goTo(3), 600);
     }
@@ -388,124 +278,102 @@ function startTimer() {
 function updateTimerDisplay() {
   const m = Math.floor(timerSec / 60);
   const s = timerSec % 60;
-  const txt = m + ':' + String(s).padStart(2, '0');
   const el = document.getElementById('timerDisplay');
   const bar = document.getElementById('timerBar');
-  el.textContent = txt;
-  const pct = timerSec / TOTAL_SEC * 100;
-  bar.style.width = pct + '%';
-  // colores de urgencia
-  el.classList.remove('warn', 'danger');
-  if (timerSec <= 30) { el.classList.add('danger'); bar.style.background = '#f43f5e'; }
-  else if (timerSec <= 60) { el.classList.add('warn'); bar.style.background = 'linear-gradient(90deg,#f59e0b,#f43f5e)'; }
+  el.textContent = m + ':' + String(s).padStart(2, '0');
+  bar.style.width = (timerSec / TOTAL_SEC * 100) + '%';
+  el.classList.remove('warn','danger');
+  if (timerSec <= 20) { el.classList.add('danger'); bar.style.background='#f43f5e'; }
+  else if (timerSec <= 40) { el.classList.add('warn'); bar.style.background='linear-gradient(90deg,#f59e0b,#f43f5e)'; }
 }
 
-// Registra respuesta vacía forzada (sin UI) cuando se acaba el tiempo
 function selectAnsForced(qi) {
   if (ANS[qi] !== undefined) return;
-  ANS[qi] = -1; // -1 = sin responder (no correcta)
-  const card = document.getElementById('qc' + qi);
+  ANS[qi] = -1;
+  const card = document.getElementById('qc'+qi);
   if (card) card.classList.add('answered');
   answered++;
   updateProg();
 }
 
-// ═══════════════════════════════════════════════════════════════
-// NAVEGACIÓN
-// ═══════════════════════════════════════════════════════════════
+// ── NAVEGACIÓN ──
 function goTo(n) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('pg' + n).classList.add('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  document.getElementById('pg'+n).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
   if (n === 2) startTimer();
-  if (n === 3) { if (timerInterval) clearInterval(timerInterval); buildEntrega(); }
+  if (n === 3) {
+    if (timerInterval) clearInterval(timerInterval);
+    document.getElementById('d_fch').value = new Date().toLocaleString('es-CO',
+      {year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'});
+  }
 }
 
-// ═══════════════════════════════════════════════════════════════
-// CONSTRUIR QUIZ
-// ═══════════════════════════════════════════════════════════════
+// ── CONSTRUIR QUIZ ──
 function buildQuiz() {
   const cont = document.getElementById('quizCont');
-  cont.innerHTML = '';
-  const L = ['A', 'B', 'C', 'D'];
+  const L = ['A','B','C','D'];
   QD.forEach((q, qi) => {
     const card = document.createElement('div');
-    card.className = 'qcard';
-    card.id = 'qc' + qi;
-    const optsHtml = q.opts.map((o, oi) =>
-      `<div class="opt" id="opt_${qi}_${oi}" onclick="selectAns(${qi},${oi})">
-        <span class="ol">${L[oi]}</span><span>${o}</span>
-      </div>`
-    ).join('');
+    card.className = 'qcard'; card.id = 'qc'+qi;
     card.innerHTML = `
-      <div class="qnum">
-        <span>Pregunta ${qi + 1} de ${QD.length}</span>
-        <span class="qcheck">✓</span>
-      </div>
-      <div class="qtxt">${q.q.replace(/\n/g, '<br>')}</div>
-      <div class="opts">${optsHtml}</div>
-      <div class="nofb">Respuesta registrada — continúa con las demás.</div>`;
+      <div class="qnum"><span>Pregunta ${qi+1} de ${QD.length}</span><span class="qcheck">✓</span></div>
+      <div class="qtxt">${q.q}</div>
+      <div class="opts">${q.opts.map((o,oi)=>`<div class="opt" id="opt_${qi}_${oi}" onclick="selectAns(${qi},${oi})"><span class="ol">${L[oi]}</span><span>${o}</span></div>`).join('')}</div>
+      <div class="nofb">Respuesta registrada.</div>`;
     cont.appendChild(card);
   });
 }
 
 function selectAns(qi, oi) {
-  const card = document.getElementById('qc' + qi);
+  const card = document.getElementById('qc'+qi);
   if (card.classList.contains('answered')) return;
-  // marcar opción
   card.querySelectorAll('.opt').forEach(o => o.classList.remove('sel'));
   document.getElementById(`opt_${qi}_${oi}`).classList.add('sel');
-  // guardar
   const wasNew = ANS[qi] === undefined;
   ANS[qi] = oi;
   card.classList.add('answered');
-  if (wasNew) {
-    answered++;
-    updateProg();
-  }
+  if (wasNew) { answered++; updateProg(); }
 }
 
 function updateProg() {
   const total = QD.length;
-  document.getElementById('progBar').style.width = (answered / total * 100) + '%';
-  document.getElementById('progTxt').textContent = answered + ' / ' + total;
-  document.getElementById('qprog').textContent = answered + ' / ' + total + ' respondidas';
+  document.getElementById('progBar').style.width = (answered/total*100)+'%';
+  document.getElementById('progTxt').textContent = answered+' / '+total;
+  document.getElementById('qprog').textContent = answered+' / '+total+' respondidas';
   document.getElementById('btnFin').disabled = answered < total;
 }
 
 function tryFinish() {
-  const sin = QD.length - answered;
-  if (sin > 0) {
-    alert('Aún te faltan ' + sin + ' preguntas por responder.');
-    return;
-  }
+  if (QD.length - answered > 0) { alert('Aún te faltan '+(QD.length-answered)+' preguntas.'); return; }
   goTo(3);
 }
 
-// ═══════════════════════════════════════════════════════════════
-// CIFRADO Y ENTREGA
-// ═══════════════════════════════════════════════════════════════
-function buildEntrega() {
-  const now = new Date();
-  document.getElementById('d_fch').value = now.toLocaleString('es-CO', {
-    year: 'numeric', month: 'long', day: 'numeric',
-    hour: '2-digit', minute: '2-digit'
-  });
-  // preview cifrado de muestra
-  const sample = CryptoJS.AES.encrypt('preview-sample', MASTER_KEY).toString();
-  document.getElementById('cifPrev').textContent = sample.repeat(4).slice(0, 300) + '...';
-}
+// ── GENERAR CÓDIGO CIFRADO ──
+function generarCodigo() {
+  const nom = (document.getElementById('d_nom').value||'').trim();
+  const grd = (document.getElementById('d_grd').value||'').trim();
+  const msgEl = document.getElementById('msgDatos');
+  const blockEl = document.getElementById('copyBlock');
 
-function buildPayload(nom, grd, now) {
+  if (!nom || !grd) {
+    blockEl.style.display = 'none';
+    msgEl.style.display = 'block';
+    return;
+  }
+  msgEl.style.display = 'none';
+
+  const now = new Date();
+
   // hash de sesión
   let h = 0;
-  const hb = nom + grd + now.toISOString().slice(0, 16);
-  for (let i = 0; i < hb.length; i++) { h = ((h << 5) - h) + hb.charCodeAt(i); h |= 0; }
-  const sessionCode = 'JFK-' + Math.abs(h).toString(16).toUpperCase().slice(0, 8);
+  const hb = nom + grd + now.toISOString().slice(0,16);
+  for (let i = 0; i < hb.length; i++) { h = ((h<<5)-h)+hb.charCodeAt(i); h|=0; }
+  const sessionCode = 'JFK-'+Math.abs(h).toString(16).toUpperCase().slice(0,8);
 
-  // construir objeto con todas las respuestas
+  const L = ['A','B','C','D'];
   const payload = {
-    v: 2,
+    v:3,
     sessionCode,
     estudiante: nom,
     grado: grd,
@@ -516,144 +384,68 @@ function buildPayload(nom, grd, now) {
     periodo: 4,
     año: 2026,
     timestamp: now.toISOString(),
-    fechaLegible: now.toLocaleString('es-CO', {year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}),
+    fechaLegible: now.toLocaleString('es-CO',{year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}),
     totalPreguntas: QD.length,
-    // respuestas del estudiante (letra + texto de la opción + si es correcta)
-    respuestas: QD.map((q, i) => {
-      const L = ['A','B','C','D'];
+    respuestas: QD.map((q,i) => {
       const elegida = ANS[i];
-      const sinResponder = elegida === undefined || elegida === -1;
+      const sinR = elegida === undefined || elegida === -1;
       return {
-        num: i + 1,
-        pregunta: q.q.replace(/<[^>]*>/g, ''),
-        letraElegida: sinResponder ? '—' : L[elegida],
-        textoElegido: sinResponder ? '(sin responder — tiempo agotado)' : q.opts[elegida],
+        num: i+1,
+        pregunta: q.q.replace(/<[^>]*>/g,''),
+        letraElegida: sinR ? '—' : L[elegida],
+        textoElegido: sinR ? '(sin responder)' : q.opts[elegida],
         letraCorrecta: L[q.ans],
         textoCorrect: q.opts[q.ans],
-        esCorrecta: !sinResponder && elegida === q.ans
+        esCorrecta: !sinR && elegida === q.ans
       };
     }),
-    // resumen
-    correctas: QD.filter((q, i) => ANS[i] === q.ans).length,
-    nota: +(QD.filter((q, i) => ANS[i] === q.ans).length / QD.length * 5).toFixed(2),
-    integridad: CryptoJS.MD5(nom + grd + now.toISOString().slice(0,16) + JSON.stringify(ANS)).toString()
+    correctas: QD.filter((q,i) => ANS[i]===q.ans).length,
+    nota: +(QD.filter((q,i) => ANS[i]===q.ans).length/QD.length*5).toFixed(2),
+    integridad: CryptoJS.MD5(nom+grd+now.toISOString().slice(0,16)+JSON.stringify(ANS)).toString()
   };
-  return { payload, sessionCode };
+
+  const enc1 = CryptoJS.AES.encrypt(JSON.stringify(payload), MASTER_KEY).toString();
+  const enc2 = CryptoJS.AES.encrypt(enc1, MASTER_KEY+'-OUTER').toString();
+
+  // Texto final que copia el estudiante
+  const textoFinal =
+    '=== QUIZ PYTHON JFK 11° P4 2026 ===\n' +
+    'Estudiante: ' + nom + '\n' +
+    'Grado: ' + grd + '\n' +
+    'Sesion: ' + sessionCode + '\n' +
+    'Fecha: ' + payload.fechaLegible + '\n' +
+    '---DATOS---\n' +
+    enc2 +
+    '\n---FIN---';
+
+  document.getElementById('cifradoTxt').textContent = textoFinal;
+  blockEl.style.display = 'block';
 }
 
-let _dlCap = null;
-(async () => {
-  _dlCap = await claude.use('downloads');
-  if (!_dlCap) {
-    document.querySelectorAll('.btn-dl').forEach(b => {
-      b.textContent = '⬇ Descarga no disponible en esta vista';
-      b.disabled = true;
-    });
-  }
-})();
-
-async function descargar() {
-  const nom = (document.getElementById('d_nom').value || '').trim();
-  const grd = (document.getElementById('d_grd').value || '').trim();
-  if (!nom || !grd) {
-    alert('⚠️ Completa tu nombre y grado antes de descargar.');
-    return;
-  }
-
-  const now = new Date();
-  const { payload, sessionCode } = buildPayload(nom, grd, now);
-
-  // Cifrar el payload completo con AES-256
-  const jsonStr = JSON.stringify(payload);
-  const encrypted = CryptoJS.AES.encrypt(jsonStr, MASTER_KEY).toString();
-
-  // Sobre cifrado adicional — el docente necesita ambas capas
-  const outer = CryptoJS.AES.encrypt(encrypted, MASTER_KEY + '-OUTER').toString();
-
-  const fStr = payload.fechaLegible;
-
-  // El archivo que descarga el estudiante: solo texto cifrado + metadatos no sensibles
-  const html = `<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Quiz Python — Entrega ${nom}</title>
-<style>
-body{font-family:'Courier New',monospace;background:#0f1117;color:#8892b0;
-  max-width:700px;margin:0 auto;padding:32px 20px;font-size:13px}
-h1{color:#64ffda;font-size:18px;margin-bottom:6px}
-.sub{color:#4a5280;font-size:12px;margin-bottom:28px}
-.meta{background:#1a1d27;border:1px solid #2e3350;border-radius:6px;
-  padding:16px 20px;margin-bottom:20px}
-.meta span{color:#64ffda}
-.enc-box{background:#1a1d27;border:1px solid #2e3350;border-radius:6px;padding:16px 20px;margin-bottom:20px}
-.enc-box h3{color:#82aaff;font-size:12px;margin-bottom:10px;letter-spacing:.1em}
-.enc-txt{word-break:break-all;line-height:1.7;color:#4a5280;font-size:11px;
-  max-height:300px;overflow-y:auto;padding:10px;background:#0f1117;border-radius:4px}
-.warn{background:#1c1501;border:1px solid #f59e0b;border-radius:6px;
-  padding:14px 18px;font-size:12px;color:#fcd34d;line-height:1.8;margin-bottom:16px}
-.hash{color:#64ffda;letter-spacing:.1em}
-footer{color:#2e3350;font-size:11px;margin-top:32px;text-align:center}
-</style>
-</head>
-<body>
-<h1>Quiz Python — Tecnología e Informática 11°</h1>
-<p class="sub">I.E. John F. Kennedy · San Juanito, Meta · Periodo 4 · 2026</p>
-
-<div class="meta">
-  <div>Estudiante: <span>${nom}</span></div>
-  <div>Grado: <span>${grd}</span></div>
-  <div>Docente: <span>Kevin Daniel Castillo Gómez</span></div>
-  <div>Entregado: <span>${fStr}</span></div>
-  <div>Código de sesión: <span class="hash">${sessionCode}</span></div>
-</div>
-
-<div class="warn">
-⚠️ ARCHIVO DE ENTREGA CIFRADO<br>
-Las respuestas de este archivo están cifradas con AES-256.<br>
-Este texto NO contiene tus respuestas de forma legible.<br>
-Solo el docente posee la clave de descifrado.<br>
-Cualquier modificación invalidará el archivo.
-</div>
-
-<div class="enc-box">
-  <h3>// PAYLOAD CIFRADO — CAPA 1</h3>
-  <div class="enc-txt">${encrypted}</div>
-</div>
-
-<div class="enc-box">
-  <h3>// PAYLOAD CIFRADO — CAPA 2</h3>
-  <div class="enc-txt">${outer}</div>
-</div>
-
-<footer>
-  JFK·11·P4·2026 · ${sessionCode} · AES-256-CBC · CryptoJS 4.2.0<br>
-  No modificar — cualquier cambio invalida la entrega
-</footer>
-</body>
-</html>`;
-
-  const filename = 'quiz_python_' + nom.replace(/\s+/g, '_').toLowerCase().slice(0, 20) + '_' + grd.replace('°', '') + '.html';
-
-  if (!_dlCap) {
-    alert('La descarga no está disponible en esta vista. Abre la actividad en claude.ai.');
-    return;
-  }
+function copiarTexto() {
+  const txt = document.getElementById('cifradoTxt').textContent;
+  const status = document.getElementById('copyStatus');
   try {
-    await _dlCap.save({ filename, data: html });
-  } catch (err) {
-    if (err && err.code === 'declined') {
-      alert('Descarga cancelada. Pulsa el botón nuevamente cuando quieras guardar.');
-    } else {
-      alert('Error al descargar: ' + (err && err.message || err));
-    }
-  }
+    navigator.clipboard.writeText(txt).then(() => {
+      status.classList.add('show');
+      setTimeout(() => status.classList.remove('show'), 2500);
+    }).catch(() => fallbackCopy(txt, status));
+  } catch(e) { fallbackCopy(txt, status); }
 }
 
-// ═══════════════════════════════════════════════════════════════
-// INIT
-// ═══════════════════════════════════════════════════════════════
+function fallbackCopy(txt, status) {
+  // Seleccionar el texto manualmente para que el usuario lo copie
+  const el = document.getElementById('cifradoTxt');
+  const range = document.createRange();
+  range.selectNodeContents(el);
+  const sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+  status.textContent = '← Texto seleccionado, pulsa Ctrl+C (o mantén y copia)';
+  status.classList.add('show');
+  setTimeout(() => { status.classList.remove('show'); status.textContent='✓ ¡Copiado!'; }, 4000);
+}
+
 buildQuiz();
 updateProg();
 </script>
